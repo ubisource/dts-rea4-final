@@ -1,9 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+body {
+  font-family: "Roboto", sans-serif;
+}
+.font-serif {
+  font-family: "Playfair Display", serif;
+}
+#page-container{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 .nav-container {
   background: #ffffff !important;
   padding: 10px 0px;
 }
 .nav-bar {
-  padding: 0!important;
+  padding: 0 !important;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,4 +29,17 @@
 }
 #logo {
   height: 37px;
+}
+#content-wrapper{
+  padding-top: 95px;
+  padding-bottom: 25px;
+}
+footer {
+  color: #949494;
+  font-size: 15px;
+  font-weight: 500;
+  background-color: #f8f8f8;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: auto;
 }

@@ -1,7 +1,7 @@
 export const Footer = () => {
-    return (
-        <>
-            <footer>halo</footer>
-        </>
-    );
+  return (
+    <>
+      <footer className="font-serif">Copyright 2022 News Portal</footer>
+    </>
+  );
 };

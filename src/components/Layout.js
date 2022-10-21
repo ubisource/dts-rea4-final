@@ -1,24 +1,17 @@
-import { Box, Container } from "@mui/material";
+import { Container } from "@mui/material";
 import { Footer } from "./Footer";
 import { HeaderNav } from "./HeaderNav";
 
-export const Layout = () => {
+export const Layout = (props) => {
   return (
     <>
-      <HeaderNav />
-      <Container maxWidth="lg">
-        <Box sx={{ my: 2 }}>
-          {[...new Array(40)]
-            .map(
-              () => `Cras mattis consectetur purus sit amet fermentum.
-Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
-            )
-            .join("\n")}
-        </Box>
-      </Container>
-      <Footer />
+      <div id="page-container">
+        <HeaderNav />
+        <Container maxWidth="lg" id="content-wrapper">
+          {props.children}
+        </Container>
+        <Footer />
+      </div>
     </>
   );
 };
