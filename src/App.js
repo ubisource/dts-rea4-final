@@ -2,10 +2,14 @@ import logo from "./logo.svg";
 import "./App.css";
 import { Layout } from "./components/Layout";
 import { Box } from "@mui/material";
+import LoginPage from "./components/LoginPage";
+import RegisterPage from "./components/RegisterPage";
 
 function App() {
   return (
     <>
+        <LoginPage/>
+        <RegisterPage/>
       <Layout>
         <Box sx={{ my: 2 }}>
           {[...new Array(40)]
