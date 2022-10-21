@@ -28,11 +28,34 @@ body {
   align-items: center;
 }
 #logo {
-  height: 37px;
+  height: 27px;
 }
 #content-wrapper{
   padding-top: 95px;
   padding-bottom: 25px;
+}
+h3.featured{
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+.featured-content{
+  padding-bottom: 10px;
+}
+h3.column-view{
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+.column-view-content .title-news{
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.column-view-content .meta{
+  font-size: 11px;
+  color: #949494;
+}
+.column-view-content .meta span{
+  margin-right: 15px;
 }
 footer {
   color: #949494;
