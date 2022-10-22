@@ -6,7 +6,7 @@ body {
 .font-serif {
   font-family: "Playfair Display", serif;
 }
-#page-container{
+#page-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -30,32 +30,78 @@ body {
 #logo {
   height: 27px;
 }
-#content-wrapper{
-  padding-top: 95px;
+#content-wrapper {
+  padding-top: 65px;
   padding-bottom: 25px;
 }
-h3.featured{
+h3.featured {
   font-size: 28px;
   margin-bottom: 15px;
 }
-.featured-content{
+.featured-content {
   padding-bottom: 10px;
 }
-h3.column-view{
+h3.column-view {
   font-size: 22px;
   margin-bottom: 15px;
 }
-.column-view-content .title-news{
+.column-view-content .title-news {
   font-size: 18px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.column-view-content .meta{
+.column-view-content .meta {
   font-size: 11px;
   color: #949494;
 }
-.column-view-content .meta span{
+.column-view-content .meta span,
+.featured-content .meta span {
   margin-right: 15px;
+}
+.featured-content .image {
+  height: 400px;
+  padding: 20px 350px 20px 20px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+.featured-content .title-news {
+  color: #ffffff;
+  font-size: 28px;
+  text-shadow: 1px 2px 4px #111111cf;
+  margin-bottom: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.featured-content .meta {
+  color: #ffffff;
+  font-size: 13px;
+}
+.featured-content .summary {
+  color: #444444;
+  font-size: 18px;
+  margin: 0;
+  line-height: 36px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 11;
+  -webkit-box-orient: vertical;
+}
+.featured-content .summary .first {
+  font-size: 36px;
+}
+.featured-content .read-more {
+  font-size: 18px;
+  line-height: 37px;
+  float: right;
 }
 footer {
   color: #949494;
