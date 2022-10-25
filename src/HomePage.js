@@ -6,22 +6,32 @@ import { Layout } from "./components/Layout";
 
 const HomePage = () => {
   const [lateNews, setLateNews] = useState();
+  const [featuredNews, setFeaturedNews] = useState();
   useEffect(() => {
-    // axios
-    //   .get(
-    //     // `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=ansPovFcUeYL58nxnXG6JxzPxsbdAKjL`
-    //     // `https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=ansPovFcUeYL58nxnXG6JxzPxsbdAKjL`
-    //     `https://api.nytimes.com/svc/search/v2/articlesearch.json?&api-key=7NONmCge0904Z8wEx7r8eWDsJoFlJh21&sort=newest`
-    //   )
-    //   .then((res) => {
-    //     setLateNews(res.data.response.docs.slice(0, 8));
-    //   })
-    //   .catch((err) => console.log(err));
-  }, [lateNews]);
+    axios
+      .get(
+        `https://api.nytimes.com/svc/search/v2/articlesearch.json?fl=multimedia,web_url,headline,pub_date,source&sort=newest&api-key=7NONmCge0904Z8wEx7r8eWDsJoFlJh21`
+      )
+      .then((res) => {
+        setLateNews(res.data.response.docs);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+  useEffect(() => {
+    axios
+      .get(
+        `https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=7NONmCge0904Z8wEx7r8eWDsJoFlJh21`
+        // `https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=ansPovFcUeYL58nxnXG6JxzPxsbdAKjL`
+      )
+      .then((res) => {
+        setFeaturedNews(res.data.results);
+      })
+      .catch((err) => console.log(err));
+  }, []);
   return (
     <Layout>
-      <Featured title="Hot Topics" />
-      <ColumnView title="Lates News" news={lateNews}/>
+      <Featured title="Hot Topics" news={featuredNews} />
+      <ColumnView title="Lates News" news={lateNews} />
     </Layout>
   );
 };

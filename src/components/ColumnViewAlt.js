@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
 import { CardNews } from "./CardNews";
 
-export const ColumnView = ({ title, news }) => {
+export const ColumnViewAlt = ({ title, news }) => {
   let count = 0;
   return (
     <>
@@ -10,22 +10,22 @@ export const ColumnView = ({ title, news }) => {
         <Grid container spacing={2}>
           {news
             ? news.map(function (item, i) {
-                if ((!item.multimedia.length)||(count === 8)) {
+                if ((!item.multimedia.length)||(count === 9)) {
                   return false;
                 }
                 count++;
                 return (
-                  <Grid key={i} item xs={3}>
-                    <CardNews news={item} imgheight="150"/>
+                  <Grid key={i} item xs={4}>
+                    <CardNews news={item} imgheight="250"/>
                   </Grid>
                 );
               })
-            : Array(8)
+            : Array(9)
                 .fill(null)
                 .map(function (item, i) {
                   return (
-                    <Grid key={i} item xs={3}>
-                      <CardNews news={item} imgheight="150"/>
+                    <Grid key={i} item xs={4}>
+                      <CardNews news={item} imgheight="250"/>
                     </Grid>
                   );
                 })}
