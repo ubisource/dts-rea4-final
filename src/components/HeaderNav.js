@@ -18,13 +18,13 @@ import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import MovieCreationRoundedIcon from '@mui/icons-material/MovieCreationRounded';
 import PropTypes from "prop-types";
-import { alpha, Box, Container } from "@mui/system";
+import {alpha, Box, Container} from "@mui/system";
 import logo from "../assets/logo.png";
 import styled from "@emotion/styled";
-import { useState } from "react";
+import {useState} from "react";
 
 function HideOnScroll(props) {
-  const { children, window } = props;
+  const {children, window} = props;
   const trigger = useScrollTrigger({
     target: window ? window() : undefined,
   });
@@ -41,7 +41,7 @@ HideOnScroll.propTypes = {
   window: PropTypes.func,
 };
 
-const Search = styled("div")(({ theme }) => ({
+const Search = styled("div")(({theme}) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
   backgroundColor: alpha(theme.palette.common.white, 0.15),
@@ -56,7 +56,7 @@ const Search = styled("div")(({ theme }) => ({
   },
 }));
 
-const SearchIconWrapper = styled("div")(({ theme }) => ({
+const SearchIconWrapper = styled("div")(({theme}) => ({
   padding: theme.spacing(0, 2),
   height: "100%",
   position: "absolute",
@@ -66,7 +66,7 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
   justifyContent: "center",
 }));
 
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
+const StyledInputBase = styled(InputBase)(({theme}) => ({
   color: "inherit",
   "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
@@ -98,7 +98,7 @@ export const HeaderNav = (props) => {
     ) {
       return;
     }
-    setState({ ...state, [anchor]: open });
+    setState({...state, [anchor]: open});
   };
 
   return (
@@ -107,7 +107,9 @@ export const HeaderNav = (props) => {
         <AppBar elevation={0} className="nav-container">
           <Container maxWidth="lg">
             <Toolbar className="nav-bar">
-              <img src={logo} alt="News Portal" id="logo" />
+              <a href="/">
+                <img src={logo} alt="News Portal" id="logo"/>
+              </a>
               <Box id="menu-container">
                 <IconButton
                   size="large"
@@ -115,17 +117,17 @@ export const HeaderNav = (props) => {
                   color="inherit"
                   aria-label="menu"
                 >
-                  <SearchRoundedIcon />
+                  <SearchRoundedIcon/>
                 </IconButton>
                 <IconButton
                   size="large"
                   edge="start"
                   color="inherit"
                   aria-label="menu"
-                  sx={{ ml:1 }}
+                  sx={{ml: 1}}
                   onClick={toggleDrawer("right", true)}
                 >
-                  <MenuRoundedIcon />
+                  <MenuRoundedIcon/>
                 </IconButton>
               </Box>
             </Toolbar>
@@ -138,7 +140,7 @@ export const HeaderNav = (props) => {
         onClose={toggleDrawer("right", false)}
       >
         <Box
-          sx={{ width: 250 }}
+          sx={{width: 250}}
           role="presentation"
           onClick={toggleDrawer("right", false)}
           onKeyDown={toggleDrawer("right", false)}
@@ -147,27 +149,27 @@ export const HeaderNav = (props) => {
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                  <HomeRoundedIcon />
+                  <HomeRoundedIcon/>
                 </ListItemIcon>
-                <ListItemText primary="Home" />
+                <ListItemText primary="Home"/>
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                  <StarRoundedIcon />
+                  <StarRoundedIcon/>
                 </ListItemIcon>
-                <ListItemText primary="Popular" />
+                <ListItemText primary="Login"/>
               </ListItemButton>
             </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  <MovieCreationRoundedIcon />
-                </ListItemIcon>
-                <ListItemText primary="Movie Review" />
-              </ListItemButton>
-            </ListItem>
+            {/*<ListItem disablePadding>*/}
+            {/*  <ListItemButton>*/}
+            {/*    <ListItemIcon>*/}
+            {/*      <MovieCreationRoundedIcon/>*/}
+            {/*    </ListItemIcon>*/}
+            {/*    <ListItemText primary="Movie Review"/>*/}
+            {/*  </ListItemButton>*/}
+            {/*</ListItem>*/}
           </List>
         </Box>
       </Drawer>
