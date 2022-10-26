@@ -18,6 +18,7 @@ import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import StarRoundedIcon from "@mui/icons-material/StarRounded";
 import NewspaperRoundedIcon from "@mui/icons-material/NewspaperRounded";
 import MovieCreationRoundedIcon from "@mui/icons-material/MovieCreationRounded";
+import LockIcon from '@mui/icons-material/Lock';
 import PropTypes from "prop-types";
 import {alpha, Box, Container} from "@mui/system";
 import logo from "../assets/logo.png";
@@ -177,6 +178,16 @@ export const HeaderNav = (props) => {
                     <MovieCreationRoundedIcon/>
                   </ListItemIcon>
                   <ListItemText primary="Movie Review"/>
+                </ListItemButton>
+              </ListItem>
+            </Link>
+            <Link to="/login">
+              <ListItem disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <LockIcon/>
+                  </ListItemIcon>
+                  <ListItemText primary="Login"/>
                 </ListItemButton>
               </ListItem>
             </Link>

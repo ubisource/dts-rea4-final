@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   Avatar,
   Box,
@@ -12,8 +12,19 @@ import {
   Typography
 } from "@mui/material";
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import {useNavigate} from "react-router-dom";
+import {signingIn} from "../components/utils/firebase/signin";
 
 const LoginPage = () => {
+  const navigate = useNavigate()
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
+  const signIn = () => {
+    const response = signingIn(email, password)
+    console.log(response)
+  }
+
   return (
     <div>
       <Container maxWidth="sm">
@@ -30,7 +41,7 @@ const LoginPage = () => {
             Sign in
           </Typography>
           {/*onSubmit={handleSubmit}*/}
-          <Box component="form" noValidate sx={{mt: 1}}>
+          <Box noValidate sx={{mt: 1}}>
             <TextField
               margin="normal"
               required
@@ -40,6 +51,7 @@ const LoginPage = () => {
               name="email"
               autoComplete="email"
               autoFocus
+              onChange={e => setEmail(e.target.value)}
             />
             <TextField
               margin="normal"
@@ -50,6 +62,7 @@ const LoginPage = () => {
               type="password"
               id="password"
               autoComplete="current-password"
+              onChange={e => setPassword(e.target.value)}
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary"/>}
@@ -58,7 +71,9 @@ const LoginPage = () => {
             <Button type="submit"
                     fullWidth
                     variant="contained"
-                    sx={{mt: 3, mb: 2}}>
+                    sx={{mt: 3, mb: 2}}
+                    onClick={signIn}
+            >
               Sign In
             </Button>
             <Grid container>
@@ -68,7 +83,7 @@ const LoginPage = () => {
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="/register" variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
