@@ -15,13 +15,16 @@ import {
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
-import StarRoundedIcon from '@mui/icons-material/StarRounded';
-import MovieCreationRoundedIcon from '@mui/icons-material/MovieCreationRounded';
+import StarRoundedIcon from "@mui/icons-material/StarRounded";
+import NewspaperRoundedIcon from "@mui/icons-material/NewspaperRounded";
+import MovieCreationRoundedIcon from "@mui/icons-material/MovieCreationRounded";
+import LockIcon from '@mui/icons-material/Lock';
 import PropTypes from "prop-types";
 import {alpha, Box, Container} from "@mui/system";
 import logo from "../assets/logo.png";
 import styled from "@emotion/styled";
 import {useState} from "react";
+import {Link} from "react-router-dom";
 
 function HideOnScroll(props) {
   const {children, window} = props;
@@ -107,26 +110,22 @@ export const HeaderNav = (props) => {
         <AppBar elevation={0} className="nav-container">
           <Container maxWidth="lg">
             <Toolbar className="nav-bar">
-              <a href="/">
+              <Link to="/">
                 <img src={logo} alt="News Portal" id="logo"/>
-              </a>
+              </Link>
               <Box id="menu-container">
-                <IconButton
-                  size="large"
-                  edge="start"
-                  color="inherit"
-                  aria-label="menu"
-                >
+                <IconButton size="large"
+                            edge="start"
+                            color="inherit"
+                            aria-label="menu">
                   <SearchRoundedIcon/>
                 </IconButton>
-                <IconButton
-                  size="large"
-                  edge="start"
-                  color="inherit"
-                  aria-label="menu"
-                  sx={{ml: 1}}
-                  onClick={toggleDrawer("right", true)}
-                >
+                <IconButton size="large"
+                            edge="start"
+                            color="inherit"
+                            aria-label="menu"
+                            sx={{ml: 1}}
+                            onClick={toggleDrawer("right", true)}>
                   <MenuRoundedIcon/>
                 </IconButton>
               </Box>
@@ -134,42 +133,64 @@ export const HeaderNav = (props) => {
           </Container>
         </AppBar>
       </HideOnScroll>
-      <Drawer
-        anchor="right"
-        open={state["right"]}
-        onClose={toggleDrawer("right", false)}
-      >
-        <Box
-          sx={{width: 250}}
-          role="presentation"
-          onClick={toggleDrawer("right", false)}
-          onKeyDown={toggleDrawer("right", false)}
-        >
+      <Drawer anchor="right"
+              open={state["right"]}
+              onClose={toggleDrawer("right", false)}>
+        <Box sx={{width: 250}}
+             role="presentation"
+             onClick={toggleDrawer("right", false)}
+             onKeyDown={toggleDrawer("right", false)}>
           <List>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  <HomeRoundedIcon/>
-                </ListItemIcon>
-                <ListItemText primary="Home"/>
-              </ListItemButton>
-            </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  <StarRoundedIcon/>
-                </ListItemIcon>
-                <ListItemText primary="Login"/>
-              </ListItemButton>
-            </ListItem>
-            {/*<ListItem disablePadding>*/}
-            {/*  <ListItemButton>*/}
-            {/*    <ListItemIcon>*/}
-            {/*      <MovieCreationRoundedIcon/>*/}
-            {/*    </ListItemIcon>*/}
-            {/*    <ListItemText primary="Movie Review"/>*/}
-            {/*  </ListItemButton>*/}
-            {/*</ListItem>*/}
+            <Link to="/">
+              <ListItem disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <HomeRoundedIcon/>
+                  </ListItemIcon>
+                  <ListItemText primary="Home"/>
+                </ListItemButton>
+              </ListItem>
+            </Link>
+            <Link to="/news">
+              <ListItem disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <NewspaperRoundedIcon/>
+                  </ListItemIcon>
+                  <ListItemText primary="Latest News"/>
+                </ListItemButton>
+              </ListItem>
+            </Link>
+            <Link to="/popular">
+              <ListItem disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <StarRoundedIcon/>
+                  </ListItemIcon>
+                  <ListItemText primary="Popular"/>
+                </ListItemButton>
+              </ListItem>
+            </Link>
+            <Link to="/movie">
+              <ListItem disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <MovieCreationRoundedIcon/>
+                  </ListItemIcon>
+                  <ListItemText primary="Movie Review"/>
+                </ListItemButton>
+              </ListItem>
+            </Link>
+            <Link to="/login">
+              <ListItem disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <LockIcon/>
+                  </ListItemIcon>
+                  <ListItemText primary="Login"/>
+                </ListItemButton>
+              </ListItem>
+            </Link>
           </List>
         </Box>
       </Drawer>

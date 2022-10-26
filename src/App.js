@@ -8,13 +8,14 @@ import {
   Link,
   useParams,
 } from "react-router-dom";
+
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
-import DetailPage from "./pages/DetailPage";
+import NewsDetailPage from "./pages/NewsDetailPage";
+import NewsPage from "./pages/NewsPage";
 import ProfilePage from "./pages/ProfilePage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
-
 
 function App() {
   return (
@@ -22,8 +23,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<HomePage/>}/>
-          <Route path="/about" element={<AboutPage/>}/>
-          <Route path="/detail/:detailId" element={<DetailPage/>}/>
+          <Route path="/news/" element={<NewsPage/>}/>
+          <Route path="/news/:tahun/:bulan/:tanggal/*" element={<NewsDetailPage/>}/>
           <Route path="/profile" element={<ProfilePage/>}/>
           <Route path="/profile/:profileId" element={<ProfilePage/>}/>
           <Route path="/login" element={<LoginPage/>}/>
