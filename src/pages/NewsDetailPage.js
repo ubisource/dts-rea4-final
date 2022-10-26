@@ -13,7 +13,7 @@ const NewsDetailPage = () => {
   useEffect(() => {
     axios
       .get(
-        `https://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=${date}&end_date=${date}&q=${kategoripath}&sort=relevance&api-key=7NONmCge0904Z8wEx7r8eWDsJoFlJh21`
+        `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${kategoripath}&sort=relevance&api-key=7NONmCge0904Z8wEx7r8eWDsJoFlJh21`
         // `https://api.nytimes.com/svc/news/v3/content.json?url=${url}&api-key=7NONmCge0904Z8wEx7r8eWDsJoFlJh21`
       )
       .then((res) => {
