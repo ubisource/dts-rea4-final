@@ -20,9 +20,9 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route exact path="/" element={<HomePage/>}/>
+          <Route path="/" element={<HomePage/>}/>
           <Route path="/news/" element={<NewsPage/>}/>
-          <Route exact path="/news/:tahun/:bulan/:tanggal/*" element={<NewsDetailPage/>}/>
+          <Route path="/news/:tahun/:bulan/:tanggal/*" element={<NewsDetailPage/>} />
           <Route path="/popular/" element={<PopularPage />} />
           <Route path="/movie/" element={<MoviePage />} />
           <Route path="/*" element={<HomePage />} />

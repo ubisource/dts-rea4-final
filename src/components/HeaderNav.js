@@ -34,7 +34,7 @@ import PropTypes from "prop-types";
 import { Box, Container } from "@mui/system";
 import logo from "../assets/logo.png";
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function HideOnScroll(props) {
@@ -108,7 +108,7 @@ export const HeaderNav = (props) => {
             let news = [];
             res.data.response.docs.map(function (item, i) {
               if (item.multimedia.length) {
-                news.push(item)
+                news.push(item);
               }
             });
             setTheNews(news);
@@ -248,7 +248,7 @@ export const HeaderNav = (props) => {
                       item.web_url.replace("https://www.nytimes.com/", "")
                     }
                   >
-                    <Card sx={{ display: "flex", marginBottom: "15px" }}>
+                    <Card sx={{ display: "flex", marginBottom: "15px" }} onClick={handleClose}>
                       <CardMedia
                         component="img"
                         sx={{ width: "40%", height: 200 }}
@@ -257,7 +257,14 @@ export const HeaderNav = (props) => {
                         }
                         alt={item.headline.main}
                       />
-                      <CardActionArea>
+                      <CardActionArea
+                      // onClick={() =>
+                      //   navigate(
+                      //     "/news/" +
+                      //       item.web_url.replace("https://www.nytimes.com/", "")
+                      //   )
+                      // }
+                      >
                         <Box sx={{ display: "flex", flexDirection: "column" }}>
                           <CardContent sx={{ flex: "1 0 auto" }}>
                             <Typography
