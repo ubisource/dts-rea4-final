@@ -8,7 +8,7 @@ a {
   text-decoration: none !important;
 }
 .font-serif {
-  font-family: "Playfair Display", serif;
+  font-family: "Playfair Display", serif!important;
 }
 #page-container {
   display: flex;
@@ -33,6 +33,26 @@ a {
 }
 #logo {
   height: 27px;
+}
+#copy-logo {
+  height: 18px;
+  padding-right: 10px;
+}
+.input-search {
+  margin-left: 13px;
+  border: none;
+  width: 80%;
+}
+.no-content{
+  text-align: center;
+  color: #949494;
+}
+.no-content svg{
+  font-size: 55px;
+}
+.input-search:active,
+.input-search:focus {
+  outline: none;
 }
 #content-wrapper {
   padding-top: 85px;
@@ -150,4 +170,10 @@ footer {
 }
 .carousel-indicators {
   bottom: -40px !important;
+}
+
+/* Backdrop */
+.MuiBackdrop-root {
+  background-color: rgba(111, 126, 140, 0.2) !important;
+  backdrop-filter: blur(4px) !important;
 }

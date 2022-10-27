@@ -1,5 +1,4 @@
 import { Grid } from "@mui/material";
-import { CardNews } from "./CardNews";
 import { CardNewsCategories } from "./CardNewsCategories";
 
 export const ColumnViewCategories = ({ title, news }) => {

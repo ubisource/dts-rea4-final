@@ -62,4 +62,4 @@ const NewsDetailPage = () => {
   );
 };
 
-export default NewsDetailPage;
+export default withRouter NewsDetailPage;
